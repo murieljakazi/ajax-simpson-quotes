@@ -1,4 +1,4 @@
-function fetchPokemonJSON() {
+  document.querySelector("#myBtn").addEventListener("click", function fetchPokemonJSON() {
     // Feel free to download this HTML and edit it, to use another Pokemon ID
     const url = `https://simpsons-quotes-api.herokuapp.com/quotes`;
     axios.get(url)
@@ -7,7 +7,8 @@ function fetchPokemonJSON() {
       })
       .then(function(simpson) {
         console.log('data decoded from JSON:', simpson);
-  
+        
+        
         // Build a block of HTML
         const simpsonHtml = `
           <p><strong>${simpson[0].character}</strong></p>
@@ -16,6 +17,5 @@ function fetchPokemonJSON() {
         `;
         document.querySelector('#simpson').innerHTML = simpsonHtml;
       });
-  }
+  });
   
-  fetchPokemonJSON();
